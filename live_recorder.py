@@ -367,7 +367,17 @@ class Niconico(LiveRecoder):
 
 
 class Twitcasting(LiveRecoder):
+    """
+    Twitcasting平台的直播录制类。
+    继承自LiveRecoder类，实现了run方法，用于检查直播状态并录制直播流。
+    """
     async def run(self):
+        """
+        检查直播状态并尝试录制直播流。
+        首先构建直播页面的URL，然后检查该URL是否已经在录制列表中。
+        如果不在录制列表中，则发送请求以获取直播流信息，解析标题，
+        选择最佳质量的流并开始录制。
+        """
         url = f'https://twitcasting.tv/{self.id}'
         if url not in recording:
             response = (await self.request(
@@ -389,7 +399,17 @@ class Twitcasting(LiveRecoder):
 
 
 class Afreeca(LiveRecoder):
+    """
+    Afreeca平台的直播录制类。
+    继承自LiveRecoder类，实现了run方法，用于检查直播状态并录制直播流。
+    """
     async def run(self):
+        """
+        检查直播状态并尝试录制直播流。
+        首先构建直播页面的URL，然后检查该URL是否已经在录制列表中。
+        如果不在录制列表中，则发送请求以获取直播流信息，解析标题，
+        选择最佳质量的流并开始录制。
+        """
         url = f'https://play.afreecatv.com/{self.id}'
         if url not in recording:
             response = (await self.request(
@@ -404,7 +424,17 @@ class Afreeca(LiveRecoder):
 
 
 class Pandalive(LiveRecoder):
+    """
+    Pandalive平台的直播录制类。
+    继承自LiveRecoder类，实现了run方法，用于检查直播状态并录制直播流。
+    """
     async def run(self):
+        """
+       检查直播状态并尝试录制直播流。
+       首先构建直播页面的URL，然后检查该URL是否已经在录制列表中。
+       如果不在录制列表中，则发送请求以获取直播流信息，解析标题，
+       选择最佳质量的流并开始录制。
+       """
         url = f'https://www.pandalive.co.kr/live/play/{self.id}'
         if url not in recording:
             response = (await self.request(
@@ -425,7 +455,17 @@ class Pandalive(LiveRecoder):
 
 
 class Bigolive(LiveRecoder):
+    """
+   Bigolive平台的直播录制类。
+   继承自LiveRecoder类，实现了run方法，用于检查直播状态并录制直播流。
+   """
     async def run(self):
+        """
+        检查直播状态并尝试录制直播流。
+        首先构建直播页面的URL，然后检查该URL是否已经在录制列表中。
+        如果不在录制列表中，则发送请求以获取直播流信息，解析标题，
+        选择最佳质量的流并开始录制。
+        """
         url = f'https://www.bigo.tv/cn/{self.id}'
         if url not in recording:
             response = (await self.request(
@@ -444,6 +484,12 @@ class Bigolive(LiveRecoder):
 
 class Pixivsketch(LiveRecoder):
     async def run(self):
+        """
+       检查直播状态并尝试录制直播流。
+       首先构建直播页面的URL，然后检查该URL是否已经在录制列表中。
+       如果不在录制列表中，则发送请求以获取直播流信息，解析标题，
+       选择最佳质量的流并开始录制。
+       """
         url = f'https://sketch.pixiv.net/{self.id}'
         if url not in recording:
             response = (await self.request(
@@ -464,7 +510,17 @@ class Pixivsketch(LiveRecoder):
 
 
 class Chaturbate(LiveRecoder):
+    """
+    Chaturbate平台的直播录制类。
+    继承自LiveRecoder类，实现了run方法，用于检查直播状态并录制直播流。
+    """
     async def run(self):
+        """
+        检查直播状态并尝试录制直播流。
+        首先构建直播页面的URL，然后检查该URL是否已经在录制列表中。
+        如果不在录制列表中，则发送请求以获取直播流信息，解析标题，
+        选择最佳质量的流并开始录制。
+        """
         url = f'https://chaturbate.com/{self.id}'
         if url not in recording:
             response = (await self.request(
@@ -488,6 +544,11 @@ class Chaturbate(LiveRecoder):
 
 
 async def run():
+    """
+    主运行函数。
+    从配置文件中读取用户信息，为每个用户创建对应平台的录制任务，
+    并等待所有任务完成。如果用户中断录制或发生系统退出，将关闭所有直播流。
+    """
     with open('config.json', 'r', encoding='utf-8') as f:
         config = json.load(f)
     try:
@@ -505,6 +566,10 @@ async def run():
 
 
 if __name__ == '__main__':
+    """
+    程序入口点。
+    初始化日志配置，然后运行主函数。
+    """
     logger.add(
         sink='logs/log_{time:YYYY-MM-DD}.log',
         rotation='00:00',
