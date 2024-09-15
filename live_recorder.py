@@ -50,7 +50,8 @@ class LiveRecoder:
                 await self.run()
                 await asyncio.sleep(self.interval)
             except ConnectionError as error:
-                if '直播检测请求协议错误' not in str(error):
+                print(str(error))
+                if '直播检测请求错误' not in str(error):
                     logger.error(error)
                 await self.client.aclose()
                 self.client = self.get_client()
