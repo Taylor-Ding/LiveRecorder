@@ -3,14 +3,21 @@
 	"output": "output",
 	"user": [{
 			"platform": "Bilibili",
-            "id": "25395907",
-            "name": "小羊chase",
+            "id": "952785",
+            "name": "解说小米",
             "interval": 10,
             "format": "mp4",
             "output": "bilibili_小羊chase",
 			"proxy": "socks5://127.0.0.1:7897",
 			"headers": {
-				"Referer": "https://live.bilibili.com/"
+				"Referer": "https://live.bilibili.com/",
+				"Cookie": "LIVE_BUVID=AUTO3017266433854942",
+				"Cache-Control": "no-cache",
+				"Accept-Encoding": "gzip, deflate, br",
+				"Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,ja;q=0.7",
+				"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.47",
+				"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+				"Connection": "keep-alive"
 			},
 			"cookies": "SESSDATA=f69c7e20%2C1741925440%2C85a71%2A91CjC35uK6uEEP4LZksGvzK9CJ7TY7kyhWkbuZ_J3rUukroUD4b2LXjjm9JLNay2Ch-0sSVlozY1g1YXpZc0JlVmF6UUpxdW90aTlsUnlYbmpqWXJwQWN2Sm1DVGpkbEdDV1psR3NJVE1LNEc0V3FQSkRLNTlmM2QzTk9zRHlLeF91VC1tWFFTZXVBIIEC; bili_jct=8b6f5df03037205e4ffc3b755214e0d3"
 		}

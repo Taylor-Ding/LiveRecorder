@@ -180,14 +180,28 @@ class LiveRecoder:
 class Bilibili(LiveRecoder):
     async def run(self):
         url = f'https://live.bilibili.com/{self.id}'
+        # if url not in recording:
+        #     response = (await self.request(
+        #         method='GET',
+        #         url='https://api.live.bilibili.com/room/v1/Room/get_info',
+        #         params={'room_id': self.id}
+        #     )).json()
+        # if response['data']['live_status'] == 1:
+        #     title = response['data']['title']
+        #     stream = self.get_streamlink().streams(url).get('best')  # HTTPStream[flv]
+        #     await asyncio.to_thread(self.run_record, stream, url, title, 'flv')
         if url not in recording:
-            response = (await self.request(
+            response = await self.request(
                 method='GET',
                 url='https://api.live.bilibili.com/room/v1/Room/get_info',
                 params={'room_id': self.id}
-            )).json()
-            if response['data']['live_status'] == 1:
-                title = response['data']['title']
+            )
+            print("===============================")
+            print(f"Status Code: {response.status_code}")
+            print("===============================")
+            responseJson = response.json()
+            if responseJson['data']['live_status'] == 1:
+                title = responseJson['data']['title']
                 stream = self.get_streamlink().streams(url).get('best')  # HTTPStream[flv]
                 await asyncio.to_thread(self.run_record, stream, url, title, 'flv')
 
