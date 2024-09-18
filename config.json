@@ -1,38 +1,18 @@
 {
-<<<<<<< Updated upstream
-  "proxy": "http://127.0.0.1:7890",
-  "output": "output",
-  "user": [
-    {
-      "platform": "Bilibili",
-      "id": "25395907",
-      "name": "小羊chase",
-      "interval": 10,
-      "format": "mp4",
-      "output": "bilibili_小羊chase",
-      "headers": {
-        "Referer": "https://live.bilibili.com/"
-      },
-      "cookies": "SESSDATA=f69c7e20%2C1741925440%2C85a71%2A91CjC35uK6uEEP4LZksGvzK9CJ7TY7kyhWkbuZ_J3rUukroUD4b2LXjjm9JLNay2Ch-0sSVlozY1g1YXpZc0JlVmF6UUpxdW90aTlsUnlYbmpqWXJwQWN2Sm1DVGpkbEdDV1psR3NJVE1LNEc0V3FQSkRLNTlmM2QzTk9zRHlLeF91VC1tWFFTZXVBIIEC; bili_jct=8b6f5df03037205e4ffc3b755214e0d3"
-    }
-  ]
-}
-=======
 	"proxy": "http://127.0.0.1:7897",
 	"output": "output",
 	"user": [{
 			"platform": "Bilibili",
-			"id": "15152878",
-			"name": "鹿乃",
-			"interval": 10,
-			"format": "mp4",
-			"output": "bilibili_鹿乃",
+            "id": "25395907",
+            "name": "小羊chase",
+            "interval": 10,
+            "format": "mp4",
+            "output": "bilibili_小羊chase",
 			"proxy": "socks5://127.0.0.1:7897",
 			"headers": {
 				"Referer": "https://live.bilibili.com/"
 			},
-			"cookies": "SESSDATA=xxxxx; bili_jct=xxxxx"
+			"cookies": "SESSDATA=f69c7e20%2C1741925440%2C85a71%2A91CjC35uK6uEEP4LZksGvzK9CJ7TY7kyhWkbuZ_J3rUukroUD4b2LXjjm9JLNay2Ch-0sSVlozY1g1YXpZc0JlVmF6UUpxdW90aTlsUnlYbmpqWXJwQWN2Sm1DVGpkbEdDV1psR3NJVE1LNEc0V3FQSkRLNTlmM2QzTk9zRHlLeF91VC1tWFFTZXVBIIEC; bili_jct=8b6f5df03037205e4ffc3b755214e0d3"
 		}
 	]
 }
->>>>>>> Stashed changes
