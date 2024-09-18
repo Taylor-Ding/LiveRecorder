@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+LiveRecorder.egg-info/PKG-INFO
+LiveRecorder.egg-info/SOURCES.txt
+LiveRecorder.egg-info/dependency_links.txt
+LiveRecorder.egg-info/requires.txt
+LiveRecorder.egg-info/top_level.txt
